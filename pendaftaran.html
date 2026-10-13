@@ -27,7 +27,7 @@
 
       <section class="form-panel" aria-labelledby="judul-formulir">
         <h2 id="judul-formulir">Formulir Pendaftaran</h2>
-        <form action="#" method="post">
+        <form id="formulir-pendaftaran">
           <div class="form-grid">
             <div class="field">
               <label for="nik">NIK</label>
@@ -72,5 +72,48 @@
   <footer>
     <p>&copy; 2026 CodeCraft Academy - Belajar, berkarya, dan berkembang.</p>
   </footer>
+  <dialog class="confirmation-dialog" id="dialog-konfirmasi" aria-labelledby="judul-konfirmasi">
+    <div class="dialog-heading">
+      <div class="dialog-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M7.75 3.75h6.5l4 4v12.5H7.75a2 2 0 0 1-2-2v-12.5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M14 4v4h4M9 13h6M9 16.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <button class="dialog-close" id="tutup-konfirmasi" type="button" aria-label="Tutup konfirmasi">&times;</button>
+    </div>
+    <p class="eyebrow">Langkah terakhir</p>
+    <h2 id="judul-konfirmasi">Konfirmasi pendaftaran</h2>
+    <p class="dialog-description">Pastikan seluruh data yang Anda masukkan sudah benar. Pendaftaran akan diproses setelah Anda mengonfirmasi.</p>
+    <div class="dialog-note">
+      <span class="dialog-note-icon" aria-hidden="true">i</span>
+      <p>Periksa kembali data Anda sebelum melanjutkan.</p>
+    </div>
+    <div class="dialog-actions">
+      <button class="button-secondary" id="batal-pendaftaran" type="button">Periksa kembali</button>
+      <button id="konfirmasi-pendaftaran" type="button">Ya, Daftar Sekarang</button>
+    </div>
+  </dialog>
+  <script>
+    const formPendaftaran = document.getElementById("formulir-pendaftaran");
+    const dialogKonfirmasi = document.getElementById("dialog-konfirmasi");
+
+    formPendaftaran.addEventListener("submit", function (event) {
+      event.preventDefault();
+      dialogKonfirmasi.showModal();
+    });
+
+    document.getElementById("batal-pendaftaran").addEventListener("click", function () {
+      dialogKonfirmasi.close();
+    });
+
+    document.getElementById("tutup-konfirmasi").addEventListener("click", function () {
+      dialogKonfirmasi.close();
+    });
+
+    document.getElementById("konfirmasi-pendaftaran").addEventListener("click", function () {
+      window.location.href = "pendaftaran-berhasil.html";
+    });
+  </script>
 </body>
 </html>
