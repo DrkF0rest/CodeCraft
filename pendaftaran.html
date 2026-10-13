@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran - CodeCraft Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">CodeCraft <span>Academy</span></div>
+      <nav aria-label="Navigasi utama">
+        <a href="index.html">Gallery</a>
+        <a href="pendaftaran.html" class="active" aria-current="page">Pendaftaran</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="judul-pendaftaran">
+      <header class="hero">
+        <p class="eyebrow">Pendaftaran peserta</p>
+        <h1 id="judul-pendaftaran">Siap belajar coding?</h1>
+        <p>Isi formulir berikut untuk mendaftar pelatihan di CodeCraft Academy.</p>
+      </header>
+
+      <section class="form-panel" aria-labelledby="judul-formulir">
+        <h2 id="judul-formulir">Formulir Pendaftaran</h2>
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="nik">NIK</label>
+              <input id="nik" name="nik" type="text" inputmode="numeric" pattern="[0-9]{16}" maxlength="16" placeholder="Masukkan 16 digit NIK" required>
+            </div>
+            <div class="field">
+              <label for="nama">Nama lengkap</label>
+              <input id="nama" name="nama" type="text" placeholder="Nama sesuai identitas" required>
+            </div>
+            <div class="field">
+              <label for="gender">Jenis kelamin</label>
+              <select id="gender" name="gender" required>
+                <option value="">Pilih jenis kelamin</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="telepon">No. HP</label>
+              <input id="telepon" name="telepon" type="tel" placeholder="Contoh: 081234567890" required>
+            </div>
+            <div class="field full">
+              <label for="alamat">Alamat</label>
+              <textarea id="alamat" name="alamat" placeholder="Masukkan alamat lengkap" required></textarea>
+            </div>
+            <fieldset class="choices">
+              <legend>Bahasa pemrograman yang diminati</legend>
+              <label><input type="checkbox" name="bahasa" value="Python"> Python</label>
+              <label><input type="checkbox" name="bahasa" value="JavaScript"> JavaScript</label>
+              <label><input type="checkbox" name="bahasa" value="Java"> Java</label>
+              <label><input type="checkbox" name="bahasa" value="C++"> C++</label>
+            </fieldset>
+            <div class="actions">
+              <button type="submit">Simpan Pendaftaran</button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CodeCraft Academy &mdash; Belajar, berkarya, dan berkembang.</p>
+  </footer>
+</body>
+</html>
